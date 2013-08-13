@@ -2,8 +2,11 @@
 local.properties
 
 # AndroidStudio build directory
-ComputeGettingStartedAndroid/build/**
+ComputeGettingStartedAndroid/ComputeGettingStartedonAndroid/build/**
 
 # AndroidStudio idea and workspace files (build.gradle files should be fine).
 ComputeGettingStartedAndroid/.idea/**
 ComputeGettingStartedAndroid/.gradle/**
+
+# AndroidStudio IML files
+*.iml
