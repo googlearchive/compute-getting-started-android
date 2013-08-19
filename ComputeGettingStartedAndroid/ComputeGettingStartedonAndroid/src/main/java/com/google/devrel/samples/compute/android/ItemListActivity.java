@@ -49,7 +49,7 @@ public class ItemListActivity extends FragmentActivity
                     .setActivateOnItemClick(true);
         }
 
-        // TODO: If exposing deep links into your app, handle intents here.
+        // TODO(developer): If exposing deep links into your app, handle intents here.
     }
 
     /**
