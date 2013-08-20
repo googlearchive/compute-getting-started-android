@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Compute Getting Started on Android</string>
-    <string name="title_item_detail">Item Detail</string>
-
+  <string name="app_name">Compute Getting Started on Android</string>
+  <string name="title_item_detail">Item Detail</string>
+  <string name="button_delete_instance">Delete instance</string>
+  <string name="button_verify_authorization">Verify Authorization</string>
+  <string name="button_authorization_verified">Authorization verified</string>
+  <string name="button_select_google_account"><b>Select</b> Account</string>
+  <string name="button_view_resources">View Resources</string>
+  <string name="button_verify_auth">Verify Authentication</string>
+  <string name="prompt_project_id">Project ID</string>
+  <string name="text_tags">Tags</string>
+  <string name="text_zone">Zone</string>
+  <string name="text_authenticating">Authenticating &#8230;</string>
+  <string name="title_item_detail">Item Detail</string>
+  <string name="toast_deleting_instance_dot_dot">Deleting instance...</string>
+  <string name="toast_no_google_accounts_registered">You don\'t have any Google accounts registered with Android</string>
+  <string name="toast_only_one_google_account_registered">You only have one Google account registered with Android</string>
+  <string name="toast_no_google_account_selected">No Google account has been selected</string>
+  <string name="toast_exception_checking_authorization">Exception checking authorization</string>
+  <string name="toast_exception_download_project_info">Exception downloading project information</string>
+  <string name="toast_deleting_disk">Deleting disk..</string>
+  <string name="toast_operation_still_running">Operation still running</string>
+  <string name="toast_operation_failed">Operation failed</string>
+  <string name="toast_operation_succeeded">Operation succeeded</string>
+  <string name="toast_operation_returned_unknown_status">Operation returned unknown status. Have the developer check the application code.</string>
+  <string name="menu_invalidate_auth_token">Invalidate Auth Token</string>
 </resources>
