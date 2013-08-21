@@ -2,6 +2,8 @@ package com.google.devrel.samples.compute.android;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +11,7 @@ import android.util.Log;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.common.AccountPicker;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -95,7 +98,7 @@ public class AppUtils {
    * @return OAuth2 scope string
    */
   public static String getOAuth2ScopeString(String[] scopes) {
-    if (Array.getLength(scopes) < 1) {
+    if (scopes==null || Array.getLength(scopes) < 1) {
       return null;
     }
 
@@ -144,7 +147,7 @@ public class AppUtils {
    * Retrieve the project id stored for the account.
    */
   public static String getStoredProjectId(Context context, String account) {
-    return getStoredProperty(context, account + ":" + AppConstants.PREF_SELECTED_PROJECT_ID);
+    return getStoredProperty(context, account + ":" + AppConstants.PREF_SELECTED_PROJECT_ID_SUFFIX);
   }
 
   /**
@@ -165,7 +168,7 @@ public class AppUtils {
   public static void setStoredProjectId(Context context, String projectId, String account) {
     SharedPreferences preferences = context.getSharedPreferences(AppConstants.APP_PREF_NM,
         Context.MODE_PRIVATE);
-    preferences.edit().putString(account + ":" + AppConstants.PREF_SELECTED_PROJECT_ID, projectId)
+    preferences.edit().putString(account + ":" + AppConstants.PREF_SELECTED_PROJECT_ID_SUFFIX, projectId)
         .commit();
   }
 
@@ -205,5 +208,38 @@ public class AppUtils {
       name = m.group(1);
     }
     return name;
+  }
+
+  /**
+   * Check that Google Play Services is installed and up to date; a dialog with an error message
+   * will display when this is an error.
+   *
+   * TODO(developer): For more robust error handling you can process the connectionStatusCode with
+   * {@code com.google.android.gms.common.ConnectionResult}.
+   */
+  public static boolean checkGooglePlayServicesAvailability(Activity activity) {
+    final int connectionStatusCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(activity);
+
+    if (GooglePlayServicesUtil.isUserRecoverableError(connectionStatusCode)) {
+      showGooglePlayServicesAvailabilityErrorDialog(activity, connectionStatusCode);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * Called if the device does not have Google Play Services installed.
+   */
+  private static void showGooglePlayServicesAvailabilityErrorDialog(final Activity activity,
+      final int connectionStatusCode) {
+    final int REQUEST_GOOGLE_PLAY_SERVICES = 0;
+    activity.runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        Dialog dialog = GooglePlayServicesUtil.getErrorDialog(
+            connectionStatusCode, activity, REQUEST_GOOGLE_PLAY_SERVICES);
+        dialog.show();
+      }
+    });
   }
 }
