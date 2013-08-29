@@ -1,0 +1,134 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/item_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.google.devrel.samples.compute.android.ItemDetailFragment">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:orientation="vertical">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Instance"/>
+
+    <TextView
+        android:id="@+id/item_detail_name_tv"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Example Instance name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Description"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_description_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Really long description goes here in order for us to see how the UI looks when the description gets really really really really long."/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Status"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_status_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Status goes here"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Machine Type"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_machine_type_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Machine type goes here"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Creation Time"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_creation_time_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Creation time goes here"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Zone"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_zone_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Zone name goes here"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Tags"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_tags_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Tags goes here"/>
+
+    <Button
+        android:id="@+id/item_detail_delete_button"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Delete instance"/>
+  </LinearLayout>
+</ScrollView>

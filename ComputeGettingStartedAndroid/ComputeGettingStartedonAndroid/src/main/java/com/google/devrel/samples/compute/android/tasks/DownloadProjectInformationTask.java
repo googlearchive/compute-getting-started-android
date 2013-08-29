@@ -213,10 +213,13 @@ public class DownloadProjectInformationTask extends ComputeTask<Object, Integer,
   @Override
   protected void onPostExecute(List<DummyItem> result) {
     // Load data downloaded from this task.
-    Log.d(LOG_TAG, "Downloaded Data result size: " + result.size());
-    if (result.size() < 1) {
+    if (result==null || result.size() < 1) {
+      Log.d(LOG_TAG, "Downloaded Data result was empty");
       return;
     }
+
+    Log.d(LOG_TAG, "Downloaded Data result size: " + result.size());
+
     for (DummyItem item : result) {
       DummyContent.addContent(item);
     }
