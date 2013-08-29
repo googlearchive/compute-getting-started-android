@@ -1,20 +1,12 @@
-# built application files
-*.apk
-*.ap_
-
-# files for the dex VM
-*.dex
-
-# Java class files
-*.class
-
-# generated files
-bin/
-gen/
-
 # Local configuration file (sdk path, etc)
 local.properties
 
-# Eclipse project files
-.classpath
-.project
+# AndroidStudio build directory
+ComputeGettingStartedAndroid/ComputeGettingStartedonAndroid/build/**
+
+# AndroidStudio idea and workspace files (build.gradle files should be fine).
+ComputeGettingStartedAndroid/.idea/**
+ComputeGettingStartedAndroid/.gradle/**
+
+# AndroidStudio IML files
+*.iml

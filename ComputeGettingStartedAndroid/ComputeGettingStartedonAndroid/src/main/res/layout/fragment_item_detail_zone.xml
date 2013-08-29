@@ -1,0 +1,61 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/item_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.google.devrel.samples.compute.android.ItemDetailFragment">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:orientation="vertical">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Zone"/>
+
+    <TextView
+        android:id="@+id/item_detail_name_tv"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Example Zone name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Status"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_status_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Status goes here"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Next Scheduled Outage"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/item_detail_outage_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:paddingLeft="20sp"
+        android:text="Scheduled outage text here"/>
+  </LinearLayout>
+</ScrollView>
