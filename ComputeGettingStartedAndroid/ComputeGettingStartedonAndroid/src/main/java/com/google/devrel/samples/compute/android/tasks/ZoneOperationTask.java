@@ -26,7 +26,7 @@ public class ZoneOperationTask extends ComputeTask<ZoneOperationParameters, Inte
   private final static Set<String> OPERATION_STATUS_SUCCESS_STRINGS =
       Sets.newHashSet("DONE");
   private final static Set<String> OPERATION_STATUS_IN_PROGRESS_STRINGS =
-      Sets.newHashSet("RUNNING");
+      Sets.newHashSet("RUNNING", "PENDING");
   private final static Set<String> OPERATION_STATUS_FAILURE_STRINGS =
       Sets.newHashSet("ERROR");
 

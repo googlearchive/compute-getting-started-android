@@ -136,13 +136,15 @@ public class DummyContent {
       long nowInMillis = System.currentTimeMillis();
 
       // Iterate through each maintenance window to find the next one.
-      for (MaintenanceWindows maintenanceWindow : maintenanceWindows) {
-        long startTimeInMillis = AppUtils.convertDateTime(maintenanceWindow.getBeginTime()).getTime();
-        Log.v(LOG_TAG, "StartTime:" + startTimeInMillis + " now " + nowInMillis);
-        long millisUntilStartTime = startTimeInMillis - nowInMillis;
+      if (maintenanceWindows != null && maintenanceWindows.size() > 0) {
+        for (MaintenanceWindows maintenanceWindow : maintenanceWindows) {
+          long startTimeInMillis = AppUtils.convertDateTime(maintenanceWindow.getBeginTime()).getTime();
+          Log.v(LOG_TAG, "StartTime:" + startTimeInMillis + " now " + nowInMillis);
+          long millisUntilStartTime = startTimeInMillis - nowInMillis;
 
-        if (millisUntilStartTime < millisUntilNextWindow) {
-          millisUntilNextWindow = millisUntilStartTime;
+          if (millisUntilStartTime < millisUntilNextWindow) {
+            millisUntilNextWindow = millisUntilStartTime;
+          }
         }
       }
 
