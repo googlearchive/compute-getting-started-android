@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.5.+'
+        classpath 'com.android.tools.build:gradle:0.6.+'
     }
 }
 apply plugin: 'android'
@@ -13,12 +13,23 @@ repositories {
 }
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "17.0.0"
+    compileSdkVersion 18
+    buildToolsVersion "18.0.1"
 
     defaultConfig {
         minSdkVersion 11
-        targetSdkVersion 17
+        targetSdkVersion 19
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+    productFlavors {
+        defaultFlavor {
+            proguardFile 'proguard-rules.txt'
+        }
     }
 }
 
@@ -68,5 +79,5 @@ dependencies {
 
     // These are the Google Compute Engine service extensions to the Google API client library.
     compile(group: 'com.google.apis', name: 'google-api-services-compute',
-            version: 'v1beta16-rev1-1.17.0-rc')
+            version: 'v1-rev1-1.17.0-rc')
 }

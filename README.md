@@ -17,10 +17,12 @@ importing.
 
 ## Setup Instructions
 1. Clone the repo locally.
+    `git clone https://github.com/GoogleCloudPlatform/compute-getting-started-android`
 1. Import the project:
     1. Open Android Studio and choose "Import Project."
     1. Select the `ComputeGettingStartedAndroid/ComputeGettingStartedonAndroid/build.gradle`
-to import. Use default values for the rest of the import screens.
+to import and choose the gradle wrapper option. Use default values for the rest
+of the import screens.
     1. NOTE: If you recieve an import error indicating that "play-services", a
 required dependency, could not be found comment out the Google Play Services
 dependency line of build.gradle. This is on line 54 of

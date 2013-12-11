@@ -264,10 +264,10 @@ public class ItemDetailFragment extends Fragment {
         Disk disk = ((DiskItem) ItemDetailFragment.this.mItem).disk;
 
         // Create and execute the delete operation.
-        Compute.Instances.Delete deleteCommand;
+        Compute.Disks.Delete deleteCommand;
         try {
           String zoneName = AppUtils.getNameFromSelfLink(disk.getZone());
-          deleteCommand = compute.instances().delete(mProjectId, zoneName, disk.getName());
+          deleteCommand = compute.disks().delete(mProjectId, zoneName, disk.getName());
           executeZoneOperation(zoneName, deleteCommand);
         } catch (IOException e) {
           e.printStackTrace();
